@@ -32,31 +32,35 @@ print_array(int array[]){
     ;
 }
 
+int print2d(int **A[])
+{
+    int rows = sizeof(list1)/(sizeof(int)*2);
+    printf("num of rows = %d \n", rows);
+    int cols;
 
-void
-print_2d_matrix(int *A[]){
-
-    return
+    printf("[");
+    for(int i = 0; i < rows; i++)
+    {
+        cols = sizeof(*list1[i])/sizeof(int);
+        printf("\n num of elements in row %d  = %d \n", rows,cols);
+        printf("[");
+        for(int j = 0; j< cols; j++)
+        {
+            printf(" %d,", &list1[i][j]);
+        }
+        ;
+    printf("],\n");
+    }
+    ;
+    printf("]");
+    return 0
     ;
 }
-
-/*
-int matrix_multiplier(int A[x][int y], int B[int x][int y]){
-
-    int C[x][y];
-
-    for(int i; i=x+1;i++){
-        for(int j; j=y+1;j++){
-           C[i][j] =  A[i][j]*B[i][j];
-        }
-    }
-
-    return C;
-}
-*/
+;
 
 int
-main(){
+main()
+{
 //    hello_world();
     int A[5][5] = {{1, 2, 3, 4, 5},{11, 22, 33, 44, 55}, {111, 222, 333, 444, 555}, {666, 777, 888, 999, 20},{21, 22, 23, 24, 25}};
     int B[5][5] = {{2, 2, 2, 2, 2},{1, 1, 1, 1, 1},{3, 3, 3, 3, 3},{4, 4, 4, 4, 4},{5, 5, 5, 5, 5}};
@@ -103,153 +107,26 @@ main(){
 
 
 
-//
-//int
-//binary_polynomial_look_up_table(bool a[8], bool b[8]){
-//    bool row1[4];
-//    int row_num1;
-//    bool row2[4];
-//    int row_num2 ;
-//
-//    bool column1[4];
-//    int col_num1;
-//    bool column2[4];
-//    int col_num2;
-//
-//    int count = 0;
-//
-//    if((a != 0)&&(b != 0)){
-//
-//
-//
-//        for(int i = 0; i < 4; i++){
-//            row1[i] = a[i];
-//            row2[i] = b[i];
-//
-//            column1[i] = a[i + 4];
-//            column2[i] = b[i + 4];
-//
-//
-//        }
-//
-//        for(int j = 0; j < 4; j++){
-//            row_num1 = row_num1 + pow(count*row1[j], 2);
-//            row_num2 = row_num2 + pow(count*row2[j], 2);
-//            col_num1 = col_num1 + pow(count*column1[j], 2);
-//            col_num2 = col_num2 + pow(count*column2[j], 2);
-//
-//            count = count + 2;
-//        }
-//
-//    }
-//}
+
+   int list[]= {1, 2, 3};
+   int *list1[] = {{1}, {2}, {3}, {4}, {5}};
+
+
+   //printf("list = %d, %d, %d", &list1[0], &list1[1], &list1[2]);
+   //int length1 = sizeof(list1)/(sizeof(int)*2);
+   //
+   //printf("\n LENGTH OF 2D list: %d \n", length1);
 
 
 
-int list[]= {1, 2, 3};
-int *list1[] = {{1}, {2}, {3}, {4}, {5}};
+   int list3[2][4] = {{10, 10, 10, 10}, {20, 20, 20, 20}};
 
+   //unsigned int a1 = 0x78;
+   //unsigned int a2 = 0xC9;
+   //unsigned int a4 = 0x11B;
+   //unsigned int a3 = a1 * a2;
+   //unsigned int a5 = a3 % a4;
 
-//printf("list = %d, %d, %d", &list1[0], &list1[1], &list1[2]);
-//int length1 = sizeof(list1)/(sizeof(int)*2);
-//
-//printf("\n LENGTH OF 2D list: %d \n", length1);
-
-int print2d(int **A[])
-{
-    int rows = sizeof(list1)/(sizeof(int)*2);
-    printf("num of rows = %d \n", rows);
-    int cols;
-
-    printf("[");
-    for(int i = 0; i < rows; i++)
-    {
-        cols = sizeof(*list1[i])/sizeof(int);
-        printf("\n num of elements in row %d  = %d \n", rows,cols);
-        printf("[");
-        for(int j = 0; j< cols; j++)
-        {
-            printf(" %d,", &list1[i][j]);
-        }
-        ;
-    printf("],\n");
-    }
-    ;
-    printf("]");
-    return 0
-    ;
-}
-;
-
-int list3[2][4] = {{10, 10, 10, 10}, {20, 20, 20, 20}};
-
-unsigned int a1 = 0x78;
-unsigned int a2 = 0xC9;
-unsigned int a4 = 0x11B;
-unsigned int a3 = a1 * a2;
-unsigned int a5 = a3 % a4;
-
-print2d(list3);
-print2d(list1);
-//
-//printf("\n%x X %x = %x\n", a1, a2, a3);
-//printf("\n %x mod %x = %x\n",a3, a4, a5);
-//printf("\n %d\n", a5);
-//binary_polynomial_look_up_table(a1, a2);
-//for(int h; h < 255, h++){
-//
-//}
-
-//    char var[20];
-//    char var1[20];
-//    char temp_var[2] = "0x";
-//    FILE * fpointer1 = fopen("log_table.txt", "r");
-//    FILE * fpointer2 = fopen("antilog_table.txt", "r");
-//    int length = 2;
-//    printf("{");
-//    for (int i = 0; i < 16; i++){
-//        int count = 0;
-//        printf("{");
-//        fgets(var, 255, fpointer2);
-//        printf("%s", "0x");
-//        for(int j = 0; j < 48; j++){
-//            var1[j] = var[j];
-//            printf("%c", var1[j]);
-//            int result = isspace(var1[j]);
-//
-//            if(result && var1[j] != '\n' ){
-//                printf(", ");
-//                printf("%s", "0x");
-//            }
-//
-//        }
-//        printf("},");
-//        printf("\n");
-//    }
-
-
-//    fclose(fpointer1);
-//    fclose(fpointer2);
-//    print_array(C);
-//
-//    int k = 0;
-//    printf("\nSTART OF FOR LOOP\n");
-//    for(k; k < 5; k++){
-//        printf("k = %d\n", k);
-//        print_array(A[k]);
-//
-//    }
-//    printf("\nEnd OF FOR LOOP\n");
-//    printf("START OF TEST");
-//    print_2d_matrix(&A);
-//    printf("END OF TEST");
-//    printf("%d\n%d\n%d\n%d\n%d\n ", A[0][0],A[0][1],A[0][2],A[0][3],A[0][4]);
-    /*
-    print_2d_matrix(B);
-    int new_matrix = matrix_multiplier(A, B);
-    printf("%d", new_matrix);*/
-
-}
-
-
-
+   print2d(list3);
+   print2d(list1);
+};
